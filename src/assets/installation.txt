@@ -1,0 +1,8 @@
+ng add @angular/material
+npm install bootstrap
+npm i jquery
+npm i mat-table-exporter 
+
+
+ng g m material   
+ng g s services/project

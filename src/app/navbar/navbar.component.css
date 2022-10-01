@@ -1,0 +1,35 @@
+.mat-toolbar-row, .mat-toolbar-single-row {
+    height: 120px;
+}
+.mat-toolbar {
+    background: white;
+    color: rgba(0,0,0,.87);
+}
+.custDivider {
+    display: block;
+    margin: 10px 10px;
+    border-top-width: 4px;
+    border-top-style: solid;
+    background-color: black;
+}
+
+.mat-tab-label-active
+{
+    background-color: #C0C0C0;
+    text-decoration: none;
+    
+}
+
+::ng-deep .mat-tab-link:hover:not(.mat-tab-disabled) {
+    background-color: rgb(206, 206, 206); 
+    color: black;
+  }
+
+.remove-border-bottom {
+    border-bottom: none;
+    color: transparent;
+}
+::ng-deep .mat-ink-bar {
+    background-color: white; 
+    visibility: collapse !important;
+  }

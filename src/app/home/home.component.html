@@ -1,0 +1,126 @@
+<!-- <mat-toolbar class="text-black">
+    <span style="cursor: pointer" class="me-5" routerLink="/home">AmeriHealth Caritas</span> -->
+
+<!-- <nav mat-tab-nav-bar>
+        <a mat-tab-link href="/home" routerLinkActive active="">
+            Home
+        </a>
+        <a mat-tab-link href="/home" routerLinkActive>
+            Project Onboarding
+        </a>
+        <a mat-tab-link href="/home" routerLinkActive >
+            Project Catalog
+        </a>
+    </nav> -->
+
+
+<!-- <button mat-button class="ms-5" routerLink="/home">
+        Home
+    </button>
+    <button mat-button routerLink="/home">
+        Project Onboarding
+    </button>
+    <button mat-button routerLink="/home">
+        Project Catalog
+    </button> -->
+
+<!-- </mat-toolbar>
+<br />
+<mat-divider class="custDivider"></mat-divider> -->
+
+<div class="container-fluid mt-5">
+    <mat-label>
+        <h2>Search Project</h2>
+    </mat-label>
+    <div class="row">
+        <mat-form-field class="col-lg-3 col-sm-12 col-md-6">
+            <input matInput type="text" placeholder="Project Name" name="projectName" #projectName="ngModel"
+                [(ngModel)]="projectSearch.ProjectName" />
+        </mat-form-field>
+        <mat-form-field class="col-lg-3 col-sm-12 col-md-6">
+            <input matInput type="text" placeholder="Project Id" name="projectId" #projectId="ngModel"
+                [(ngModel)]="projectSearch.ProjectId" />
+        </mat-form-field>
+        <mat-form-field class="col-lg-3 col-sm-12 col-md-6">
+            <mat-select name="projectMethodology" id="projectMethodology" #projectMethodology="ngModel"
+                [(ngModel)]="projectSearch.ProjectMethodology" placeholder="Project Methodology">
+                <mat-option *ngFor="let _objMeth of lstMethodologies" [value]="_objMeth.MethodologyId">
+                    {{ _objMeth.MethodologyName }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div class="col-lg-3 col-sm-12 col-md-6">
+            <button mat-flat-button class="btnSave" (click)="SearchProject()">
+                Search
+            </button>
+        </div>
+    </div>
+    <br />
+    <mat-divider></mat-divider>
+    <br />
+    <button mat-raised-button class="ms-3 mb-3 float-end" type="submit"
+        style="background-color: #006ab4; color: white; margin-left: -10px;"
+        (click)="exporter.exportTable('xlsx', {fileName:'Projects', sheet: 'Projects', Props: {Author: 'Karthik'}})">Excel
+        Export <img src="assets/excel.jpg" /></button>
+    <div class="col-12">
+        <table mat-table matTableExporter matSort style="width: 100%" class="mat-elevation-z8" [dataSource]="dsProjects"
+            #exporter="matTableExporter">
+            <ng-container matColumnDef="ProjectId">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Project Number
+                </th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.ProjectId }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="ProjectName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Project Name
+                </th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.ProjectName }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="ProjectDescription">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Project Description
+                </th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.ProjectDescription }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="PercentCompliant">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Percent Compliant</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.PercentCompliant }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Evoluation">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Evoluation</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.Evoluation }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="ProjectGoLiveDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Project Go-Live Date
+                </th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.ProjectGoLiveDate | date: "short"}}
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="dcProjects"></tr>
+            <tr mat-row *matRowDef="let row; columns: dcProjects"></tr>
+        </table>
+    </div>
+    <div class="col-12">
+        <mat-paginator class="mat-elevation-z8" [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons>
+        </mat-paginator>
+    </div>
+    <br />
+</div>

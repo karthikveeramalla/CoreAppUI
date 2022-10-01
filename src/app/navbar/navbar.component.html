@@ -1,0 +1,24 @@
+<mat-toolbar class="text-black">
+    <span style="cursor: pointer" class="me-5" routerLink="/home"> <img src=".././assets/angular_logo.png" width="200px"></span>
+   <nav mat-tab-nav-bar class="remove-border-bottom">
+    <a mat-tab-link
+       *ngFor="let link of navLinks"
+       [routerLink]="link.path"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive" style="text-decoration: none;">
+      {{link.label}}
+    </a>
+  </nav>
+  <!-- <nav mat-tab-nav-bar class="remove-border-bottom">
+    <a *ngFor="let link of navLinks" 
+       [routerLink]="link.path"
+       routerLinkActive
+       #rla="routerLinkActive"
+       mat-tab-link
+       [active]="rla.isActive">
+       {{link.label}}
+    </a>
+  </nav> -->
+
+</mat-toolbar>
+<mat-divider class="custDivider"></mat-divider>
