@@ -1,1 +1,117 @@
-<p>projectmethodology works!</p>
+<div class="container-fluid mt-5">
+    <mat-label>
+        <h2>Search Info</h2>
+    </mat-label>
+    <div class="row">
+        <mat-form-field class="col-lg-3 col-sm-12 col-md-6">
+            <input matInput type="text" placeholder="Project Name" name="projectName" #projectName="ngModel"
+                [(ngModel)]="objProject.ProjectName" />
+        </mat-form-field>
+        <mat-form-field class="col-lg-3 col-sm-12 col-md-6">
+            <input matInput type="text" placeholder="Project Id" name="projectId" #projectId="ngModel"
+                [(ngModel)]="objProject.ProjectId" />
+        </mat-form-field>
+        <mat-form-field class="col-lg-3 col-sm-12 col-md-6">
+            <mat-select name="projectMethodology" id="projectMethodology" #projectMethodology="ngModel"
+                [(ngModel)]="objProject.MethodologyId" placeholder="Project Methodology">
+                <mat-option *ngFor="let _objMeth of lstMethodologies" [value]="_objMeth.MethodologyId">
+                    {{ _objMeth.MethodologyName }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field class="col-lg-12 col-sm-12 col-md-12">
+            <mat-label>Project Description</mat-label>
+            <textarea matInput name="description" id="description" #description="ngModel"
+                [(ngModel)]="objProject.ProjectDescription"></textarea>
+        </mat-form-field>
+    </div>
+    <br />
+    <mat-divider></mat-divider>
+    <br />
+    <mat-label>
+        <h2>Project Contacts (Stakeholders)</h2>
+    </mat-label>
+    <div class="row">
+        <mat-form-field class="col-lg-3 col-sm-12 col-md-6">
+            <input matInput type="text" placeholder="User Id" name="UserId" [(ngModel)]="UserId" />
+        </mat-form-field>
+        <div class="col-lg-3 col-sm-12 col-md-6">
+            <button mat-flat-button class="btnSave" (click)="SearchUser()">
+                Search
+            </button>
+        </div>
+        <mat-form-field class="col-lg-3 col-sm-12 col-md-6">
+            <mat-select name="roleId" id="roleId" [(ngModel)]="RoleId" placeholder="Role">
+                <mat-option *ngFor="let _objROle of lstRoles" [value]="_objROle.RoleId">
+                    {{ _objROle.RoleName }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div class="col-lg-3 col-sm-12 col-md-6">
+            <button mat-flat-button class="btnSave" (click)="AddRole()">
+                Add
+            </button>
+        </div>
+    </div>
+    <div class="col-12">
+        <table mat-table matSort style="width: 100%" class="mat-elevation-z8" [dataSource]="dsUsers">
+            <ng-container matColumnDef="UserId">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>User Id</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.UserId }}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="LastName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.LastName }}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="FirstName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.FirstName }}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="Role">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Role</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.Role }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Location">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Location</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.Location }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Action">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+                <td mat-cell *matCellDef="let element">
+                   
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="dcUsers"></tr>
+            <tr mat-row *matRowDef="let row; columns: dcUsers"></tr>
+        </table>
+        <mat-paginator class="mat-elevation-z8" [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <button mat-flat-button class="btnSave" (click)="AddRole()">
+                Submit
+            </button>
+            <button mat-flat-button class="btnSave ms-2 float-end" (click)="AddRole()">
+                Cancel
+            </button>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+    <br/>
+</div>

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Methodology } from '../models/Methodology';
 import { Project } from '../models/Project';
 import { ProjectSearch } from '../models/ProjectSearch';
+import { Role } from '../models/Role';
 
 @Injectable({
   providedIn: 'root',
@@ -32,6 +33,12 @@ export class ProjectService {
       this.baseUrl + 'api/Project/GetMethodologies',
       this.httpOptions
     );
+  }
 
+  GetRoles(): Observable<Role[]> {
+    return this.httpClient.get<Role[]>(
+      this.baseUrl + 'api/Project/GetRoles',
+      this.httpOptions
+    );
   }
 }

@@ -1,0 +1,17 @@
+
+.btnSave {
+    background-color: #006ab4;
+    color: white !important;
+  }
+
+  .mat-header-cell,
+.mat-sort-header {
+  background-color: #006ab4 !important;
+  color: #ffffff !important;
+  font-size: 15px !important;
+  /* font-family: Roboto, "Helvetica Neue", sans-serif; */
+}
+
+tr.mat-header-row {
+  height: 45px !important;
+}

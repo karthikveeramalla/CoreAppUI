@@ -5,4 +5,6 @@ export class Project{
     PercentCompliant!: number;
     Evoluation!: string;
     ProjectGoLiveDate!: Date | string | null;
+    MethodologyId!: number;
+    ProjectMethodology!: string;
 }
