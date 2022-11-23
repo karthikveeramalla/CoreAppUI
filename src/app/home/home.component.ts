@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   
   lstProjects: Project[] = [];
   dsProjects: MatTableDataSource<Project> = new MatTableDataSource<Project>(this.lstProjects);
-  dcProjects: string[] = ['ProjectId','ProjectName','ProjectDescription','PercentCompliant','Evoluation','ProjectGoLiveDate'];
+  dcProjects: string[] = ['Action','ProjectId','ProjectName','ProjectDescription','PercentCompliant','Evoluation','ProjectGoLiveDate'];
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
@@ -84,5 +84,11 @@ export class HomeComponent implements OnInit {
     //   },
     //   complete: () => {},
     // });
+  }
+
+  ProjectDetails(projectId: string)
+  { 
+    sessionStorage.setItem("ProjectId",projectId);
+    this.Router.navigateByUrl("/projectdetails");
   }
 }

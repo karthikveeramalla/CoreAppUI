@@ -11,13 +11,15 @@ import { MatTabLink, MatTabNav } from '@angular/material/tabs';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProjectmethodologyComponent } from './projectmethodology/projectmethodology.component';
 import { MatTableExporterModule } from 'mat-table-exporter';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    ProjectmethodologyComponent
+    ProjectmethodologyComponent,
+    ProjectDetailsComponent
   ],
   imports: [
     BrowserModule,
