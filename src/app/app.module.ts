@@ -11,7 +11,7 @@ import { MatTabLink, MatTabNav } from '@angular/material/tabs';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProjectmethodologyComponent } from './projectmethodology/projectmethodology.component';
 import { MatTableExporterModule } from 'mat-table-exporter';
-import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { AddProjectDetailsDialog, ProjectDetailsComponent } from './project-details/project-details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
     HomeComponent,
     NavbarComponent,
     ProjectmethodologyComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    AddProjectDetailsDialog
   ],
   imports: [
     BrowserModule,
@@ -30,6 +31,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
     MatTableExporterModule
   ],
   providers: [MatTabLink,MatTabNav],
+  entryComponents: [AddProjectDetailsDialog],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

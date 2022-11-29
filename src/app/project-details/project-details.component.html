@@ -1,3 +1,18 @@
+
+
+<div class="container-fluid mt-1">
+  <button mat-flat-button class="btnSave ms-2 float-end" (click)="AddRole()">
+    Add Role
+  </button>
+<button mat-flat-button class="btnSave ms-2 float-end" (click)="AddCheckList()">
+  Add CheckList
+</button>
+<button mat-flat-button class="btnSave ms-2 float-end" (click)="AddDeliverable()">
+  Add Deliverable
+</button>
+
+<br/>
+<br/><br/>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <ng-container matColumnDef="priority">
@@ -40,3 +55,4 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   
+</div>

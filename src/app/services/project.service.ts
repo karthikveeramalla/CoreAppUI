@@ -41,4 +41,23 @@ export class ProjectService {
       this.httpOptions
     );
   }
+
+  GetStages(): Observable<any[]> {
+    return this.httpClient.get<any[]>(
+      this.baseUrl + 'api/Project/GetStages',
+      this.httpOptions
+    );
+  }
+  GetDeliveribles(): Observable<any[]> {
+    return this.httpClient.get<any[]>(
+      this.baseUrl + 'api/Project/GetDeliveribles',
+      this.httpOptions
+    );
+  }
+  GetCheckLists(): Observable<any[]> {
+    return this.httpClient.get<any[]>(
+      this.baseUrl + 'api/Project/GetCheckLists',
+      this.httpOptions
+    );
+  }
 }
