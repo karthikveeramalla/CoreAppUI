@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProjectmethodologyComponent } from './projectmethodology/projectmethodology.component';
 import { MatTableExporterModule } from 'mat-table-exporter';
 import { AddProjectDetailsDialog, ProjectDetailsComponent } from './project-details/project-details.component';
+import { ChartsComponent } from './charts/charts.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AddProjectDetailsDialog, ProjectDetailsComponent } from './project-deta
     NavbarComponent,
     ProjectmethodologyComponent,
     ProjectDetailsComponent,
-    AddProjectDetailsDialog
+    AddProjectDetailsDialog,
+    ChartsComponent
   ],
   imports: [
     BrowserModule,

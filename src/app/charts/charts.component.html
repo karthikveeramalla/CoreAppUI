@@ -1,0 +1,16 @@
+
+<div *ngFor="let rl of lstMethodologies">
+    <div class="row" style="--bs-gutter-x: 0 !important">
+        <div class="col-4" style="text-align: right;">
+            {{rl.projectName}}
+        </div>
+        <div class="progress col-5">
+            <div class="progress-bar progress-bar-striped" role="progressbar"
+            aria-valuenow="rl.percentage" aria-valuemin="0" aria-valuemax="rl.percentage"
+            [style.width]="rl.percentage + '%'">
+            <span *ngIf="rl.percentage > 0" class="sr-only">{{rl.percentage}}%</span>
+            </div>
+        </div>
+        <div class="col-1" style="text-align: left;">{{rl.percentage}}%</div>
+    </div>
+</div>

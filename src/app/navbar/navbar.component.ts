@@ -10,7 +10,8 @@ export class NavbarComponent implements OnInit {
   navLinks = [
     { path: 'home', label: 'Home' },
     { path: 'pmethodology', label: 'Project Onboarding' },
-    { path: 'catalog', label: 'Project Catalog' }
+    { path: 'catalog', label: 'Project Catalog' },
+    { path: 'chart', label: 'Charts' }
   ];
   
 
